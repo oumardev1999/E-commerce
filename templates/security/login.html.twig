@@ -3,13 +3,19 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form method="post">
+<section class="container  py-5">
+  <div class="container py-5 bg-light">
+    <div class="row ">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+       <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
     {% if app.user %}
-        <div class="mb-3">
+        <div class="mb-3 text-center">
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
@@ -34,9 +40,33 @@
             </label>
         </div>
     #}
-
-    <button class="btn btn-lg btn-primary" type="submit">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end py-3 ">
+    <button class="btn  btn-outline-warning " type="submit">
         Sign in
     </button>
+    </div>
 </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwZW5Q_Mml5CCc5-GBPVRSY2a4BPzaAKoC8g&usqp=CAU"
+                  class="img-fluid" alt="Sample image">
+    <div class="container py-6">      
+     
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+       <a href="{{path('app_register')}}" class="btn btn-outline-warning">S'inscrir</a>
+   <a href="{{path('app_forgot_password_request')}}" class="btn btn-outline-warning ">Forget password</a>
+   </div>
+   </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
 {% endblock %}
+

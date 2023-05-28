@@ -3,9 +3,14 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
-
-    <table class="table">
+  
+<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR22OWy8BW6oJiv9oxQj9iex21kxDKBp5vyDw&usqp=CAU')">
+ <div class="card">
+  <div class="card-header">
+  <h1 class="text-center">Nos types Article </h1>
+  </div >
+  <div class="card-body">
+     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -35,4 +40,9 @@
     </table>
 
     {# <a href="{{ path('app_articles_new') }}">Create new</a> #}
+  </div>
+</div>
+</div>
+
+   
 {% endblock %}

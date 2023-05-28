@@ -3,11 +3,17 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
+<section class="container  py-5">
+  <div class="container py-5 bg-light">
+    <div class="row ">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+       {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+    <h1 class="text-center">Register</h1>
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
@@ -16,6 +22,25 @@
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn btn-warning">Register</button>
+        <button type="submit" class="btn btn-outline-warning">Register</button>
     {{ form_end(registrationForm) }}
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+     
+         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image">
+                  
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
 {% endblock %}
+
+

@@ -3,8 +3,17 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-<h1> Envoi par email</h1>
-<div>
+<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5LB-3u_YOOmM_5as4_1YtIhFMu_lsoLz1-g&usqp=CAU')">
+ <div class="card">
+ <div class="card-header text-danger text-center">
+  <h1 class="text-center"> Envoyez Nous par email</h1>
+ </div>
+  <div class="card-body">
+  <div>
 {{form(form)}}
 </div>
+  </div>
+</div>
+</div>
+
 {% endblock %}

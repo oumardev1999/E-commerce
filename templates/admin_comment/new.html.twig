@@ -3,9 +3,18 @@
 {% block title %}New Comment{% endblock %}
 
 {% block body %}
-    <h1>Create new Comment</h1>
-
+  
+<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe-HuNiAMXDvjkoPimU15HyAx8mDyh_-gXyg&usqp=CAU')">
+ <div class="card">
+ <div class="card-header text-danger text-center">
+   <h1 class="text-center">Create new Comment</h1>
+ </div>
+  <div class="card-body">
     {{ include('admin_comment/_form.html.twig') }}
 
     <a href="{{ path('app_admin_comment_index') }}">back to list</a>
+  </div>
+</div>
+</div>
+   
 {% endblock %}

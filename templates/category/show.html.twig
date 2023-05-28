@@ -3,9 +3,14 @@
 {% block title %}Category{% endblock %}
 
 {% block body %}
-    <h1>{{ category.name }}</h1>
    
-    <a href="{{ path('app_category_index') }}">Retourner à la liste des catégorie</a>
+   <div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkTRg73wlWGVcAO6L8ZWcOls09eiJ7lR1jA&usqp=CAU')">
+ <div class="card">
+  <div class="card-header">
+      <h1 class="text-center">{{ category.name }}</h1>
+  </div >
+  <div class="card-body">
+      <a href="{{ path('app_category_index') }}">Retourner à la liste des catégorie</a>
     <div class="mt-5">
     <table class="table">
         <thead>
@@ -34,5 +39,8 @@
         </tbody>
     </table>
     </div>
+  </div>
+</div>
+</div>
     
 {% endblock %}

@@ -32,6 +32,9 @@ class Article
     #[ORM\OneToMany(mappedBy: 'article', targetEntity: Comment::class, orphanRemoval: true)]
     private Collection $comments;
 
+    #[ORM\Column(length: 255)]
+   // private ?string $Image = null;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -124,4 +127,16 @@ class Article
     {
         return $this->title;
     }
+
+   /* public function getImage(): ?string
+    {
+        return $this->Image;
+    }
+
+    public function setImage(string $Image): self
+    {
+        $this->Image = $Image;
+
+        return $this;
+    }*/
 }

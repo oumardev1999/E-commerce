@@ -3,11 +3,12 @@
 {% block title %}Edit Category{% endblock %}
 
 {% block body %}   
-<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWtCkuNU-2doMCSS2IMk7tB2t-EQ8IIXQjKg&usqp=CAU')">
+
+<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkTRg73wlWGVcAO6L8ZWcOls09eiJ7lR1jA&usqp=CAU')">
  <div class="card">
- <div class="card-header text-danger text-center">
- <h1>Edit Category</h1>
- </div>
+  <div class="card-header">
+    <h1 class="text-center">Edit Category</h1>
+  </div >
   <div class="card-body">
      {{ include('admin_category/_form.html.twig', {'button_label': 'Update'}) }}
 
@@ -18,4 +19,5 @@
 </div>
 </div>
 {% endblock %}
+
 

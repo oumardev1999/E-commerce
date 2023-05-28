@@ -3,10 +3,21 @@
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
-    <h1>Reset your password</h1>
-
+  
+<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9sMTn29_SW-h2uc3aEs-famSKy3uqUsZWkA&usqp=CAU')">
+ <div class="card">
+ <div class="card-header text-danger text-center">
+    <h1 class="text-center">Reset your password</h1>
+ </div>
+  <div class="card-body">
+     
     {{ form_start(resetForm) }}
         {{ form_row(resetForm.plainPassword) }}
         <button class="btn btn-primary">Reset password</button>
     {{ form_end(resetForm) }}
+  </div>
+</div>
+</div>
+  
 {% endblock %}
+

@@ -3,25 +3,30 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
-
-    <table class="table">
+  
+<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa4sxn-2jIxccaT-WFn4s8JAldxUADveu13w&usqp=CAU')">
+ <div class="card">
+  <div class="card-header">
+     <h1 class="text-center text-warning">Mon profil</h1>
+  </div >
+  <div class="card-body">
+       <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Email</th>
-                <th>Roles</th>
+            
                 <th>Password</th>
                 <th>IsVerified</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for user in users %}
+        {# {% for user in users %} #}
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+               
                 <td>{{ user.password }}</td>
                 <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
                 <td>
@@ -29,13 +34,18 @@
                     <a href="{{ path('app_profile_edit', {'id': user.id}) }}">edit</a>
                 </td>
             </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
+        {# {% else %} #}
+            {# <tr> #}
+                {# <td colspan="6">no records found</td> #}
+            {# </tr> #}
+        {# {% endfor %} #}
         </tbody>
     </table>
 
     {# <a href="{{ path('app_profile_new') }}">Create new</a> #}
+  </div>
+</div>
+</div>
+
+  
 {% endblock %}

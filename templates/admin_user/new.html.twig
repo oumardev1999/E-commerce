@@ -3,9 +3,19 @@
 {% block title %}New User{% endblock %}
 
 {% block body %}
-    <h1>Create new User</h1>
-
-    {{ include('admin_user/_form.html.twig') }}
+  
+<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBs98MsodA2kT6vHmir9TJ_O7FhV7_yFM4QA&usqp=CAU')">
+ <div class="card">
+ <div class="card-header text-danger text-center">
+   <h1 class="text-center">Create new User</h1>
+ </div>
+  <div class="card-body">
+      {{ include('admin_user/_form.html.twig') }}
 
     <a href="{{ path('app_admin_user_index') }}">back to list</a>
+  </div>
+</div>
+</div>
+
+  
 {% endblock %}

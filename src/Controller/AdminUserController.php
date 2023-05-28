@@ -8,10 +8,10 @@ use App\Repository\UserRepository;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-//use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use  symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+
 #[Route('/admin/user')]
 class AdminUserController extends AbstractController
 {
@@ -24,16 +24,16 @@ class AdminUserController extends AbstractController
     }
 
     #[Route('/new', name: 'app_admin_user_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UserRepository $userRepository,): Response
+    public function new(Request $request, UserRepository $userRepository,UserPasswordHasherInterface $passwordHasher): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-          // $plainpassword= $form->get('plainpassword')->getData()
-           //$hashedPassword = $passwordHasher->hashPassword($user, $plaintextPassword);
-         //$user->setPassword($hashpassword);
+        $plainpassword =  $form->get('plainpassword')->getData();
+        $hashpassword = $passwordHasher->hashpassword($user , $plainpassword);
+        $user->setpassword($hashpassword);
             $userRepository->save($user, true);
             return $this->redirectToRoute('app_admin_user_index', [], Response::HTTP_SEE_OTHER);
         }

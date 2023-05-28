@@ -17,8 +17,10 @@ class ProfileController extends AbstractController
      #[Route('/', name: 'app_profile_index', methods: ['GET'])]
      public function index(UserRepository $userRepository): Response
      {
+        $user = $this->getuser();
         return $this->render('profile/index.html.twig', [
-             'users' => $userRepository->findAll(),
+            
+             'user'=>$user,
         ]);
     }
 
@@ -41,16 +43,9 @@ class ProfileController extends AbstractController
         ]);
     }
 
-    #[Route('', name: 'app_profile_show', methods: ['GET'])]
-    public function show(): Response
-    {
-        $user= $this->getUser();
-        return $this->render('profile/show.html.twig', [
-            'user' => $user,
-        ]);
-    }
+   
 
-    #[Route('/edit', name: 'app_profile_edit', methods: ['GET', 'POST'])]
+    #[Route('/edit/{id}', name: 'app_profile_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, UserRepository $userRepository ,UserPasswordHasherInterface $passwordhasher): Response
     {
         $user= $this->getUser();
@@ -71,8 +66,9 @@ class ProfileController extends AbstractController
             'form' => $form,
         ]);
     }
+    
 
-    #[Route('/{id}', name: 'app_profile_delete', methods: ['POST'])]
+    #[Route('/delete/{id}', name: 'app_profile_delete', methods: ['POST'])]
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
@@ -80,5 +76,14 @@ class ProfileController extends AbstractController
         }
 
         return $this->redirectToRoute('app_profile_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/{id}', name: 'app_profile_show', methods: ['GET'])]
+    public function show(): Response
+    {
+        $user= $this->getUser();
+        return $this->render('profile/show.html.twig', [
+            'user' => $user,
+        ]);
     }
 }

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-warning">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">E-commerce</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,19 +9,24 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{path('app_home')}}">Acceuil</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{path('app_category_index')}}">Les Catégories</a>
-        </li>
          <li class="nav-item">
-          <a class="nav-link" href="{{path('app_register')}}">inscription</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="{{path('app_login')}}">Identification</a>
+          <a class="nav-link" href="{{path('app_login')}}">Log In</a>
         </li>
          <li class="nav-item">
           <a class="nav-link" href="{{path('app_contact')}}">Contacter nous</a>
         </li>
-
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Espace User
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{path('app_category_index')}}">Catégories</a></li>
+            <li><a class="dropdown-item" href="{{path('app_articles_index')}}">Articles</a></li>
+            <li><a class="dropdown-item" href="{{path('app_comment_index')}}">Commentaires</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{path('app_profile_index')}}">Profile</a></li>
+          </ul>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            Espace Admin

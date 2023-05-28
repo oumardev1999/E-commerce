@@ -3,9 +3,14 @@
 {% block title %}Comment index{% endblock %}
 
 {% block body %}
-    <h1>Comment index</h1>
-
-    <table class="table">
+  
+<div class="container mt-5  py-5 class="bg-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQksze_N9LDbOJ8wwUL4DhxqpaR-SpBi7q4g&usqp=CAU')">
+ <div class="card">
+ <div class="card-header text-danger text-center">
+    <h1 class="text-center text-warning">Les différentes commentaires</h1>
+ </div>
+  <div class="card-body">
+     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -39,4 +44,9 @@
     </table>
 
     <a href="{{ path('app_admin_comment_new') }}">Create new</a>
+  </div>
+</div>
+</div>
+
+   
 {% endblock %}
